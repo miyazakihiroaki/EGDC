@@ -280,4 +280,13 @@ h3::before {
         border-radius: 0;
         outline: none;
         }
+    
+    .activity{
+        display: block;
+    }
+
+    .activity-reverse {
+        display: block;
+    }
+    
 }
