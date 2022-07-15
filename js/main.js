@@ -6,7 +6,8 @@ $(function(){
     $('button:nth-child(-n+4)')
         .on('mouseover', function() {
             $(this).stop(true).animate({
-                backgroundColor: '#ae5e9b',
+                backgroundColor: '#000000',
+                // backgroundColor: '#ae5e9b',
                 color: '#fff'
             }, duration);
         })

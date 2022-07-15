@@ -1,16 +1,22 @@
 @charset "utf-8";
 
-body{
-    background-color: #f8f8f8;
+body {
+    /* background-color: #f8f8f8; */
+    background-color: floralwhite;
 }
 
-header{
-    background-color: white;
+header {
+    /* background-color: white; */
+    background-color: floralwhite;
 }
 
-.first-view{
+main {
+    background-color: floralwhite;
+}
+
+.first-view {
     height: calc(100vh - 110px);
-    background-image:url(../images/index/bg-main.jpg) ;
+    background-image: url(../images/index/bg-main.jpg);
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
@@ -18,48 +24,89 @@ header{
     align-items: center;
 }
 
-.first-view-text{
-    width:100%;
+.first-view-text {
+    width: 100%;
     max-width: 100%;
     margin-left: auto;
     margin-right: auto;
     padding-left: 40px;
     padding-bottom: 80px;
-    color:white;
+    color: white;
     font-weight: bold;
     text-shadow: 1px 1px 10px #4b2c14;
 }
 
-.first-view-text h1{
-    font-family: 'Courier New', Courier, monospace;font-size: 56px;
+.first-view-text h1 {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 56px;
     /* 行間を指定 */
-    line-height:72px
+    line-height: 72px
 }
 
-.first-view-text p{
+.first-view-text p {
     font-size: 18px;
     margin-top: 20px;
 }
 
-.lead{
+.lead {
     max-width: 1200px;
     margin: 60px auto;
 }
 
-.lead p{
+.lead p {
     text-align: center;
     line-height: 2.5;
     font-weight: bold;
 }
 
-h2{
-    font-size:22px;
-    font-weight: bold;
+.lead>p>span {
+    position: relative;
+    display: inline-block;
+    padding: 0 2em;
     text-align: center;
+    font-size: larger;
 }
 
-h2::after{
-    content:"";
+/* .lead>p>span:before,
+.lead>p>span:after {
+    font-family: 'Font Awesome 5 Free';
+    line-height: 1;
+    position: absolute;
+    top: calc(50% - .5em);
+    color: #eb6100;
+}
+
+.lead>p>span:before {
+    left: 0;
+    content: '\f101';
+}
+
+.lead>p>span:after {
+    right: 0;
+    content: '\f100';
+} */
+
+h2 {
+    font-size: 22px;
+    font-weight: bold;
+    text-align: center;
+    position: relative;
+    padding: 1rem 2rem calc(1rem + 10px);
+    background: #fff100;
+}
+
+h2:before {
+    position: absolute;
+    top: -7px;
+    left: -7px;
+    width: 100%;
+    height: 100%;
+    content: '';
+    border: 4px solid #000;
+}
+
+h2::after {
+    content: "";
     display: block;
     width: 36px;
     height: 3px;
@@ -69,7 +116,7 @@ h2::after{
     margin-right: auto;
 }
 
-h3{
+h3 {
     padding-bottom: 10px;
 }
 
@@ -77,13 +124,13 @@ h3::before {
     content: "●";
 }
 
-#activity{
+#activity {
     background-color: floralwhite;
-    padding: 30px 0;
+    padding: 1px 0;
 }
 
-.activity{
-    display:flex;
+.activity {
+    display: flex;
     justify-content: space-between;
     width: 930px;
     max-width: 90%;
@@ -93,41 +140,53 @@ h3::before {
     align-items: flex-start;
 }
 
-.activity-text{
+.activity-text {
     max-width: 500px;
     margin-right: 40px;
 }
 
-.activity-text > h3 {
+.activity-text>h3 {
     margin-bottom: 10px;
     font-size: larger;
 
-} 
+}
 
-.activity-text > ul > li {
+.activity-text>ul {
+    background: #fffcf4;
+    border-radius: 8px;
+    /*角の丸み*/
+    box-shadow: 0px 0px 5px silver;
+    /*5px=影の広がり具合*/
+    padding: 0.5em 0.5em 0.5em 2em;
+}
+
+.activity-text>ul>li {
     font-size: larger;
     font-weight: bold;
     line-height: 2.0;
+    /* padding: 0.5em 0 */
 }
 
-.activity-text > ul > li::before {
+.activity-text>ul>li::before {
     content: "☑";
     margin-right: 10px;
 }
 
-.activity-text > ul > li > span{
+.activity-text>ul>li>span {
     font-weight: bold;
     /* border-bottom: 2px dotted red; */
-    background-color: lightcoral;
+    background: linear-gradient(transparent 60%, #ffff66 60%);
     font-size: larger;
-} 
-
-.activity img, .activity-reverse img{
-    width:360px;
 }
 
-.activity-reverse{
-    display:flex;
+.activity img,
+.activity-reverse img {
+    border-radius: 10px;
+    width: 360px;
+}
+
+.activity-reverse {
+    display: flex;
     flex-direction: row-reverse;
     justify-content: space-between;
     width: 930px;
@@ -136,91 +195,117 @@ h3::before {
     margin-left: auto;
     margin-right: auto;
     align-items: flex-start;
-    
+
 }
 
-.activity-example >h3{
+.activity-example>h3 {
     margin-bottom: 10px;
 }
 
-.activity-example dl{
+.activity-example dl {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
     display: flex;
+    padding: 0;
+    position: relative;
 }
 
-.activity-example dt{
+.activity-example dt {
     display: block;
     width: 30%;
     margin-bottom: 10px;
     font-weight: bold;
     border-bottom: 2px dotted black;
+    color: black;
+    border-left: solid 8px orange;
+    /*左側の線*/
+    background: whitesmoke;
+    /*背景色*/
+    margin-bottom: 5px;
+    /*下のバーとの余白*/
+    line-height: 1;
+    padding: 0.5em;
+    list-style-type: none !important;
 }
 
-.activity-example dd{
+.activity-example dd {
     display: block;
     width: 70%;
     margin-bottom: 10px;
     border-bottom: 2px dotted black;
     font-weight: bold;
+    color: black;
+    background: whitesmoke;
+    /*背景色*/
+    margin-bottom: 5px;
+    /*下のバーとの余白*/
+    line-height: 1;
+    border-radius: 0 15px 15px 0;
+    /*右側の角だけ丸く*/
+    padding: 0.5em;
+    list-style-type: none !important;
 }
 
 .activity-example {
     margin-left: 40px;
 }
 
-
-
-.member{
+.member {
     padding-top: 45px;
     padding-bottom: 55px;
 }
 
-.member-list{
+.member-list {
     display: flex;
     padding-top: 40px;
     padding-bottom: 10px;
     padding-left: 60px;
     padding-right: 60px;
-    overflow:scroll;
+    overflow: scroll;
+    justify-content: space-between;
 }
 
-.member-list li{
+.member-list li {
     flex-shrink: 0;
-    width:260px;
+    width: 260px;
     margin-left: 75px;
+    background-color: #fff;
 }
 
-.member-list dl{
+/* .member-list > li > img{
+    border-radius: 10px;
+} */
+
+.member-list dl {
     margin-top: 20px;
 }
 
-.member-list dt{
+.member-list dt {
     font-weight: bold;
+    padding-right: 10px;
+    padding-left: 10px;
 }
 
-.member-list dd{
+.member-list dd {
     font-size: 13px;
     line-height: 20px;
     margin-top: 10px;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-bottom: 10px;
 }
 
-.member-list .price{
-    font-weight: bold;
-    margin-top: 15px;
-}
-
-.site-menu li{
+.site-menu li {
     margin-right: 19px
 }
 
-#sns-footer{
+#sns-footer {
     margin-top: 30px;
     margin-bottom: -50px;
 }
 
-#sns-footer img{
+#sns-footer img {
     width: 50px;
     height: 50px;
     margin-right: 10px;
@@ -229,42 +314,50 @@ h3::before {
 
 
 
-@media (max-width:800px){
-    .first-view{
-        height:calc(100vh-50px);background-image: url(../images/index/bg-main-sp.jpg);align-items: flex-start;
+@media (max-width:800px) {
+    .first-view {
+        height: calc(100vh-50px);
+        background-image: url(../images/index/bg-main-sp.jpg);
+        align-items: flex-start;
     }
-    
-    .first-view-text{
+
+    .first-view-text {
         padding-top: 60px;
         padding-left: 20px;
     }
-    
-    .first-view-text h1{
+
+    .first-view-text h1 {
         font-size: 36px;
         line-height: 48px;
     }
-    
-    .first-view-text p{
+
+    .first-view-text p {
         font-size: 14px;
         margin-top: 15px;
     }
-    
-    .lead{
+
+    .lead {
         padding-left: 20px;
         padding-right: 20px;
     }
-    
-    .lead p{
+
+    .lead p {
         text-align: left;
     }
 
-    .item-list{
+    .item-list {
         padding-left: 20px;
         padding-right: 20px;
     }
-    .item-list li{
-        width: 220px;
+
+    .item-list li {
+        /* width: 220px; */
+        width: 100%;
         margin-left: 30px;
+    }
+
+    .item-list li:not(:last-child) {
+        margin-bottom: 30px;
     }
 
     .toggle-menu-button {
@@ -279,14 +372,17 @@ h3::before {
         border: none;
         border-radius: 0;
         outline: none;
-        }
-    
-    .activity{
+    }
+
+    .activity {
         display: block;
     }
 
     .activity-reverse {
         display: block;
     }
-    
+
+    .member-list>li>img {
+        border-radius: 10px;
+    }
 }
