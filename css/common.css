@@ -1,0 +1,78 @@
+@charset "utf-8";
+
+*,::before,::after{padding:0;margin:0;box-sizing:border-box;}
+
+ul,ol{list-style:none;}
+a{color:inherit;text-decoration: none;}
+
+body{font-family: sans-serif;
+    font-size: 16px;
+    color:black;
+    /* 行間を指定 */
+    line-height: 1;
+    }
+
+img{max-width: 100%;}
+
+header{
+    padding: 10px 0;
+}
+
+/* クラスセレクタでヘッダーのスタイルを指定 */
+.header-inner{max-width:1200px;height:110px;margin-left:auto;margin-right:auto;padding-left:40px;padding-right:40px;display: flex;justify-content: space-between;align-items: center;}
+
+/* ハンバーガーメニューを非表示にする */
+.toggle-menu-button{display: none;}
+
+/* ロゴとナビゲーションのスタイルを指定 */
+.header-logo{display: block;width:170px;}
+.site-menu ul{display:flex;}
+.site-menu ul li{
+    font-weight: bold;
+}
+
+button {
+    display: block;
+    float: left;
+    width: 224px;
+    height: 80px;
+    margin: 0 10px 20px;
+    padding: 0;
+    font-size: 16px;
+    letter-spacing: 0.15em;
+    color: black;
+    background-color: #fff;
+    border: 1px solid;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+/* フッターのスタイルを指定する */
+.footer{color:white;background-color: black;padding-top:30px;padding-bottom: 15px;display:flex;flex-direction:column;align-items: center;}
+.footer-logo{display:block;width:235px;margin-top:90px;}
+.footer-tel{font-size: 26px;font-weight: bold;margin-top: 28px;}
+.footer-time{font-size: 13px;margin-top: 16px;}
+.copyright{font-size: 14px;font-weight: bold;margin-top: 90px;}
+
+@media(max-width:800px){
+    /* ヘッダーのレイアウト調整 */
+    .site-menu ul{display:block;text-align: center;}
+    .site-menu li{margin-top: 20px;}
+    .header{position: fixed;top: 0;left: 0;right: 0;background-color: #ffffff;height:50px;z-index:10;box-shadow: 0 3px 6px rgba(0,0,0,0.1);}
+    .header-inner{padding-left: 20px;padding-right: 20px;height: 100%;position: relative;}
+    .header-logo{width:100px;}
+    /* メニューを開いた時のレイアウト作成 */
+    .header-site-menu{position:absolute;top:100%;left:0;right:0;color: #ffffff;background-color: gray;padding-top: 30px;padding-bottom: 50px;
+    /* メニューの表示、非表示の設定 */
+    display: none;}
+    .header-site-menu.is-show{display:block;}
+    /* ハンバーガーメニューのボタンを作成 */
+    .toggle-menu-button{display:block;width:44px;height: 34px;background-image: url(../images/common/icon-menu.png);background-size: 50%;background-position: center;background-repeat: no-repeat;background-color: transparent;border: none;border-radius: 0;outline:none;}
+    /* ##フッターのレイアウト調節 */
+    /* 見えない部分のレイアウトを整える */
+    .main{padding-top: 50px;}
+    /* フッター内の要素のレイアウト調節 */
+    .footer-logo{margin-top: 60px;}
+    .footer-tel{font-size: 20px;}
+    .copyright{margin-top: 50px;}
+    }
