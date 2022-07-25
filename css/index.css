@@ -382,6 +382,13 @@ h3::before {
         display: block;
     }
 
+    .activity img,
+    .activity-reverse img {
+    /* border-radius: 10px;
+    width: 360px; */
+    margin-top: 10px;
+    }
+
     .member-list>li>img {
         border-radius: 10px;
     }
